@@ -1,0 +1,132 @@
+h1 {
+  border-bottom: 1px solid #aaa;
+}
+label {
+}
+dl {
+  padding:0 1em;
+  margin-left:0.3em;
+  border-left: 0.4em solid #555;
+}
+.ui-tabs-panel dd {
+  font-size: 75%;
+}
+dl .details {
+  display:none;
+}
+dd:hover .details {
+  display:inline;
+}
+dt {
+  font-size:110%;
+  margin:1em 0.3em 0 0.3em;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.details {
+  margin:0.1em 0.3em;
+  padding:0.3em 0.3em 0.3em 0.8em;
+  color:#444;
+  border-left: 2px solid #555;
+}
+dd:hover .details-top {
+  display:block !important;
+}
+.details-top {
+  border-left: none !important;
+  border-top: 2px solid #555;
+  margin:0.8em 0.3em 0.3em 0.3em !important;
+}
+.submit {
+  background:#fff;
+  border:#555 2px solid;
+  color:#555;
+  text-align:center;
+  margin-left:1.8em;
+  padding:0.4em 1em;
+  font-size:110%;
+  cursor:pointer;
+}
+.submit:hover {
+  background:#555;
+  color:#fff;
+}
+.position {
+  display:none;
+  color:#555;
+}
+h1:hover .position {
+  display:inline;
+  text-decoration:none;
+}
+table.results {
+  font-size:80%;
+  border-collapse:collapse;
+  width:100%;
+}
+table.results th {
+  background:#333;
+  color:#eef;
+  padding:0.2em 0.5em;
+  text-align:left;
+  border: 1px solid #666;
+}
+table.results td {
+  border: 1px solid #666;
+}
+table.results tr:hover td {
+  background:#cba;
+}
+table.results .comment {
+  background-color:#bbb;
+  color:#333;
+  font-weight:bolder;
+  text-align:center;
+  padding:0.3em;
+}
+table.results th.vertical-genome{
+}
+table.results th.vertical-genome span{
+font-size:5px;
+}
+table.results tr th.vertical-genome:hover span{
+font-size:100%;
+}
+.msg {
+   background: #aad;
+   color: #003;
+   border: 1px solid #003;
+   margin: 1em;
+   padding: 0.5em;
+   text-align:center;
+}
+
+
+
+#verytop {
+  text-align:right;
+}
+#verytop h1 {
+  background:transparent;
+  color:#eee;
+  border:none;
+  margin:0.5em 0.2em;
+}
+#verytop a:visited, #verytop a {
+  color:white;
+  margin:0 2.7em 0 -2.5em;
+  text-decoration: none;
+  border-top:1px solid white;
+  padding:0.2em 1em;
+}
+#verytop a:hover {
+  background: #eee;
+  color:#333;
+}
+#content {
+  background:#eee;
+  margin:1em 5%;
+  padding:1em;
+  width:90%;
+  overflow-x:auto;
+}
