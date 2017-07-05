@@ -32,7 +32,20 @@ The database can be explored to uncover candidate new susceptibility genes, as w
 git clone https://github.com/SouthGreenPlatform/daTALbase.git
 ```
 
-2- Copy directories into dedicated HTML and CGI directories
+2- Create and populate your database
+
+
+```
+mysql>\. daTALbase_schema.sql
+```
+
+Using the templates_files as examples, you will be able to populate the database as follows:
+
+```
+mysql>LOAD DATA LOCAL INFILE 'PATH_TO_FILES/bacteria.txt' INTO TABLE bacteria;
+```
+
+3- Copy directories into dedicated HTML and CGI directories
 
 ```
 mkdir <DATALBASE_HTML_DIR>
@@ -46,7 +59,7 @@ cd <DATALBASE_PATH>/cgi-bin
 cp * <DATALBASE_CGI_BIN_DIR>
 ```
 
-3- Edit the Configuration file and javascript
+4- Edit the Configuration file and javascript
 
 ```
 cd <DATALBASE_CGI_BIN_DIR>/Config
@@ -60,6 +73,6 @@ cd <DATALBASE_HTML_DIR>/javascript
 vi functions.js
 ```
 
-4- Access to your database
+5- Access to your database
 
 
