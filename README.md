@@ -30,10 +30,19 @@ The database can be explored to uncover candidate new susceptibility genes, as w
 
 ```
 git clone https://github.com/SouthGreenPlatform/daTALbase.git
+cd daTALbase
 ```
 
 2- Create and populate your database
 
+Go to database directory and connect to your mysql server
+
+```
+cd database
+mysql -u MYLOGIN -h MYHOST -p
+```
+
+Create the schema
 
 ```
 mysql>\. daTALbase_schema.sql
