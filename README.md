@@ -45,6 +45,8 @@ mysql -u MYLOGIN -h MYHOST -p
 Create the schema
 
 ```
+mysql> create database MYDATABASENAME;
+mysql> use MYDATABASENAME;
 mysql>\. daTALbase_schema.sql
 ```
 
