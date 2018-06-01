@@ -128,7 +128,7 @@ while(my @row = $sth->fetchrow_array)
 	$hosts{$host}=$host_code;
 }
 
-$query = "select distinct rnaseq_condition_condition_code1,rnaseq_condition_condition_code2 from GeneExpDiffData;";
+$query = "select distinct rnaseq_condition_condition_code1,rnaseq_condition_condition_code2,rnaseq_condition_exp_code1 from GeneExpDiffData $particule_public2;";
 $sth = $database_handle->prepare($query);
 $sth->execute();
 my @comparisons;
@@ -136,7 +136,8 @@ while(my @row = $sth->fetchrow_array)
 {
 	my $cond1 = $row[0];
 	my $cond2 = $row[1];
-	my $comparison = "$cond1 versus $cond2";
+	my $exp_code= $row[2];
+        my $comparison = "$exp_code - $cond1 versus $cond2";
 	push(@comparisons,$comparison);
 }
 
