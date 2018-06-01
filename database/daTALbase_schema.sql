@@ -257,6 +257,7 @@ CREATE TABLE `rnaseq_condition` (
   `control` varchar(45) DEFAULT NULL,
   `bacteria_strain_concate` varchar(45) NOT NULL,
   `host_host_code` varchar(45) NOT NULL,
+  `public` varchar(56) NOT NULL,
   PRIMARY KEY (`exp_code`,`condition_code`,`bacteria_strain_concate`,`host_host_code`),
   KEY `fk_condition_bacteria1_idx` (`bacteria_strain_concate`),
   KEY `fk_rnaseq_condition_host1_idx` (`host_host_code`),
