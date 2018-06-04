@@ -111,24 +111,25 @@ while(my @row = $sth->fetchrow_array)
 	push(@genus,$genre);
 }
 
-$query = "select host_code,Specie,Cultivar,genus from host;";
+$query = "select host_code,Specie,Cultivar,genus,assembly from host;";
 $sth = $database_handle->prepare($query);
 $sth->execute();
 my %hosts;
 while(my @row = $sth->fetchrow_array)
 {
-	my $host_code = $row[0];
-	my $specie = $row[1];
-	my $cultivar = $row[2];
-	my $genus = $row[3];
-	my $host = $genus."_".$specie;
-	if ($cultivar ne '-'){
-        	$host = $genus."_".$row[1]."_".$row[2];
-	}
-	$hosts{$host}=$host_code;
+        my $host_code = $row[0];
+        my $specie = $row[1];
+        my $cultivar = $row[2];
+        my $genus = $row[3];
+        my $assembly = $row[4];
+        my $host = $genus."_".$specie;
+        if ($cultivar ne '-'){
+                $host = $genus."_".$row[1]."_".$row[2]."_".$assembly;
+        }
+        $hosts{$host}=$host_code;
 }
 
-$query = "select distinct rnaseq_condition_condition_code1,rnaseq_condition_condition_code2,rnaseq_condition_exp_code1 from GeneExpDiffData $particule_public2;";
+$query = "select distinct rnaseq_condition_condition_code1,rnaseq_condition_condition_code2 from GeneExpDiffData;";
 $sth = $database_handle->prepare($query);
 $sth->execute();
 my @comparisons;
@@ -136,8 +137,7 @@ while(my @row = $sth->fetchrow_array)
 {
 	my $cond1 = $row[0];
 	my $cond2 = $row[1];
-	my $exp_code= $row[2];
-        my $comparison = "$exp_code - $cond1 versus $cond2";
+	my $comparison = "$cond1 versus $cond2";
 	push(@comparisons,$comparison);
 }
 

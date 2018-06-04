@@ -280,8 +280,8 @@ if ($action eq "getEBEs"){
 		my @tal_names = split(/~/,$tals_or_genes);
 		foreach my $talname(@tal_names) {
 			my $tal_name = $talname;
-			my $query = "select start_EBE, stop_EBE, TALBS_sequence, host_gene_Info_GENE_ID,TALS_talKEY,EBEstrand,Rank,SCORE,host_gene_Info_host_host_code,chromosome,gene_annotation from EBEsInPromoters where (TALS_talKEY='TBv1_".$tal_name."' or host_gene_Info_GENE_ID='$tal_name') and Rank <= $rank;";
-			
+			my $query = "select start_EBE, stop_EBE, TALBS_sequence, host_gene_Info_GENE_ID,TALS_talKEY,EBEstrand,Rank,SCORE,host_gene_Info_host_host_code,chromosome,gene_annotation from EBEsInPromoters where (TALS_talKEY='".$tal_name."' or host_gene_Info_GENE_ID='$tal_name') and Rank <= $rank;";
+				
 			my $sth = $database_handle->prepare($query);
 			$sth->execute();
 			while(my @row = $sth->fetchrow_array)
@@ -294,7 +294,10 @@ if ($action eq "getEBEs"){
 					$genelist_hash{$gene} = 1;
 				}
 				my $tal = $row[4];
-				my $talname_to_display = $talnames{$tal};
+				my $talname_to_display = $tal;
+				if ($talnames{$tal} =~/\w/){
+					$talname_to_display = $talnames{$tal};
+				}
 				#my $plantspecies = $row[5]."_".$row[6]."_".$row[7];
 				my $plantspecies = $row[8];
 				$tallist_hash{$tal} = 1;
