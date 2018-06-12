@@ -93,9 +93,13 @@ vi functions.js
 For example, from cc2-login:
 
 ```
-tar -czvf HDRA_EBE.tar.gz HDRA_EBE
 tar -czvf 3k_indels_EBE.tar.gz 3k_indels_EBE
 scp 3k_indels_EBE.tar.gz yourlogin@bioinfo-web.ird.fr:/data/www/cgi-bin/datalbase/SNPs
 ```
+From bioinfo-web:
 
+```
+tar -xzvf 3k_indels_EBE.tar.gz
+perl merge.pl 3k_indels_EBE 3k_indels_EBE_output
+```
 
