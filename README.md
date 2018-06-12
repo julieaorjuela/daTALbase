@@ -90,11 +90,12 @@ vi functions.js
 
 1- Create archive to transfer results from cc2-login to bioinfo-web in directory `/data/www/cgi-bin/datalbase/SNPs`
 
-For example:
+For example, from cc2-login:
 
 ```
 tar -czvf HDRA_EBE.tar.gz HDRA_EBE
 tar -czvf 3k_indels_EBE.tar.gz 3k_indels_EBE
+scp 3k_indels_EBE.tar.gz yourlogin@bioinfo-web.ird.fr:/data/www/cgi-bin/datalbase/SNPs
 ```
 
 
