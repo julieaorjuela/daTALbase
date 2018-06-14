@@ -85,21 +85,3 @@ vi functions.js
 ```
 
 5- Access to your database
-
-## Integrate SNPs in the database
-
-1- Create archive to transfer results from cc2-login to bioinfo-web in directory `/data/www/cgi-bin/datalbase/SNPs`
-
-For example, from cc2-login:
-
-```
-tar -czvf 3k_indels_EBE.tar.gz 3k_indels_EBE
-scp 3k_indels_EBE.tar.gz yourlogin@bioinfo-web.ird.fr:/data/www/cgi-bin/datalbase/SNPs
-```
-From bioinfo-web:
-
-```
-tar -xzvf 3k_indels_EBE.tar.gz
-perl merge.pl 3k_indels_EBE 3k_indels_EBE_output
-```
-
