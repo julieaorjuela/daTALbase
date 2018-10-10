@@ -84,4 +84,6 @@ cd <DATALBASE_HTML_DIR>/javascript
 vi functions.js
 ```
 
-5- Access to your database
+5- Access to your database using the URL defined by the variable $CGI_WEB_DIR in Configuration.pm
+
+$CGI_WEB_DIR/index.cgi
